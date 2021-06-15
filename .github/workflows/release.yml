@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@main
       - uses: papeloto/action-zip@v1
         with:
-          files: script
+          files: scripts
           recursive: true
           dest: zip
   build:

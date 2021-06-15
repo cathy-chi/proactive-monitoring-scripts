@@ -27,6 +27,6 @@ const finchExample = async function() {
   }
 };
 
-exports.handler = async () => {  // Exported handler function 
+exports.handler = async () => { // Exported handler function 
   return await finchExample();
 };

@@ -1,18 +1,10 @@
+
 name: ReleaseCI
 on:
   push:
     branches:
       - main
 jobs:
-  zip-files:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: papeloto/action-zip@v1
-        with:
-          files: scripts
-          recursive: true
-          dest: zip
   build:
     runs-on: ubuntu-latest
     steps:
@@ -23,5 +15,6 @@ jobs:
         aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
         aws_secret_access_key: ${{ secrets.AWS_ACCESS_SECRET}}
         aws_bucket: ${{ secrets.AWS_BUCKET_NAME }}
-        source_dir: 'zip'
-        destination_dir: ''
+        source_dir: 'scripts'
+        destination_dir: 'scripts'
+        

@@ -4,6 +4,15 @@ on:
     branches:
       - main
 jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: papeloto/action-zip@v1
+        with:
+          files: script
+          recursive: true
+          dest: zip
   build:
     runs-on: ubuntu-latest
     steps:

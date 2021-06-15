@@ -7,12 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@main
     - name: Release to S3
-    with:
-      aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
-      aws_secret_access_key: ${{ secrets.AWS_ACCESS_SECRET}}
-      aws_bucket: ${{ secrets.AWS_BUCKET_NAME }}
-      source_dir: 'scripts'
-      destination_dir: 'scripts'
-      
+      with:
+        aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws_secret_access_key: ${{ secrets.AWS_ACCESS_SECRET}}
+        aws_bucket: ${{ secrets.AWS_BUCKET_NAME }}
+        source_dir: 'scripts'
+        destination_dir: 'scripts'

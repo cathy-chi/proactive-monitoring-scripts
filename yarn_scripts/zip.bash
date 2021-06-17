@@ -6,7 +6,9 @@ do
     mkdir -p testing_scripts/nodejs/node_modules/;
     cp $file testing_scripts/nodejs/node_modules/;
     BASENAME=`basename $file .js`
-    zip -r $BASENAME.zip testing_scripts/nodejs/*;
+    cd testing_scripts
+    zip -r $BASENAME.zip nodejs/*;
+    cd ..
+    mv testing_scripts/$BASENAME.zip zipped_scripts/
     rm -r testing_scripts/nodejs;
-    mv $BASENAME.zip zipped_scripts/
 done

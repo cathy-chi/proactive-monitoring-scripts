@@ -24,7 +24,7 @@ const loginAndPassword = async function () {
     throw err;
   }
   const url = await page.url();
-  if (redirectUrl.startsWith(url)) {
+  if (url.startsWith(redirectUrl)) {
     log.info("The URL " + url + " matches the redirect URL " + redirectUrl);
   } else {
     log.error("The URL " + url + " is not a valid redirect URL.");

@@ -6,12 +6,11 @@ const loginAndPassword = async function () {
 
   const redirectUrl = "https://tryfinch.com";
   const provider = process.env.provider;
+  const apiUrl =
+  "https://connect.tryfinch.com/authorize?%20&client_id=3898b9a4-898e-4b82-8abc-a5d719c56bf9%20&products=company%20directory%20&redirect_uri=https://tryfinch.com&sandbox=true&sandbox=true&payroll_provider=" +
+      provider;
   const page = await synthetics.getPage();
-  // add provider
-  await page.goto(
-    "https://connect.tryfinch.com/authorize?%20&client_id=3898b9a4-898e-4b82-8abc-a5d719c56bf9%20&products=company%20directory%20&redirect_uri=https://tryfinch.com&sandbox=true&sandbox=true&payroll_provider=" +
-      provider
-  );
+  await page.goto(apiUrl);
   await page.click("[type=submit]");
   await page.click("[type=submit]");
   await page.type("#username", process.env.email);
@@ -33,6 +32,5 @@ const loginAndPassword = async function () {
 };
 
 exports.handler = async () => {
-  // Exported handler function
   return await loginAndPassword();
 };

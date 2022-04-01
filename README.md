@@ -1,7 +1,7 @@
 # Proactive Monitoring E2E Tests
 
 ### testing_scripts
-This directory contains scripts taht are Puppeteer tests modified as [AWS Synthetic canary scripts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Nodejs.html#CloudWatch_Synthetics_Canaries_modify_puppeteer_script). 
+This directory contains scripts that are Puppeteer tests modified as [AWS Synthetic canary scripts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Nodejs.html#CloudWatch_Synthetics_Canaries_modify_puppeteer_script). 
 
 ### zipped_scripts
 This directory contains the zipped copies of these scripts with the appropriate file structure. These canaries will be created via AWS Lambdas and therefore, when they run the canary scripts, they expect the files to have the appropriate [library dependency file structure](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path). Running `yarn zip` after writing your canary script in Javascript will create those directories correctly.
